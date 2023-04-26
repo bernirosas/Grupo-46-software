@@ -1,0 +1,37 @@
+<html>
+<head>
+    <title>Hello world</title>
+    <%= stylesheet_link_tag 'home' %>
+
+</head>
+
+<script>
+function myFunction() {
+  location.href = "./inicio";
+}
+</script>
+
+<body>
+<div class="page-container">
+<div class ="content-wrap">
+<%= render 'componentes/header' %>
+
+    <div id="inicio">
+    
+    <h2>Once Upon a Book</h2>
+    <%=image_tag "hello_world.png", id: "imagen" %>
+    <br>
+    <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ&ab_channel=RickAstley">CLICK AQUI</a>
+    <br>
+    <button id="transicion" onclick="myFunction()">Siguiente página</button>
+    <%= link_to "Ir a libros", :libros %>
+    </div>
+    <p>probando copiar a una nueva branch</p>
+    <p>hacer algo nuevo ahora</p>
+
+</div>
+<%= render 'componentes/footer' %>
+</div>
+</body>
+
+</html>

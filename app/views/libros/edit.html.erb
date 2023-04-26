@@ -1,0 +1,75 @@
+<html>
+<head>
+    <%= stylesheet_link_tag 'libros' %>
+</head>
+
+<body>
+<div class="page-container">
+<div class ="content-wrap">
+<%= render 'componentes/header' %>
+
+    <div class="bloque">
+
+        <h1>Nuevo libro</h1>
+        <%= form_with model: @libro do |form| %>
+        <div>
+            <%= form.label :titulo %><br>
+            <%= form.text_field :titulo %>
+            <% @libro.errors.full_messages_for(:titulo).each do |message| %>
+            <div><%= message %></div>
+            <% end %>
+        </div>
+        <div>
+            <%= form.text_field :fecha %>
+            <% @libro.errors.full_messages_for(:fecha).each do |message| %>
+            <div><%= message %></div>
+            <% end %>
+        </div>
+        <div>
+            <%= form.label :categoria %><br>
+            <%= form.text_field :categoria %>
+            <% @libro.errors.full_messages_for(:categoria).each do |message| %>
+            <div><%= message %></div>
+            <% end %>
+        </div>
+        <div>
+            <%= form.label :autor %><br>
+            <%= form.text_field :autor %>
+            <% @libro.errors.full_messages_for(:autor).each do |message| %>
+            <div><%= message %></div>
+            <% end %>
+        </div>
+        <div>
+            <%= form.label :precio %><br>
+            <%= form.text_field :precio %>
+            <% @libro.errors.full_messages_for(:precio).each do |message| %>
+            <div><%= message %></div>
+            <% end %>
+        </div>
+        <div>
+            <%= form.label :stock %><br>
+            <%= form.text_field :stock %>
+            <% @libro.errors.full_messages_for(:stock).each do |message| %>
+            <div><%= message %></div>
+            <% end %>
+        </div>
+        <div>
+            <%= form.label :descripcion %><br>
+            <%= form.text_area :descripcion %>
+            <% @libro.errors.full_messages_for(:descripcion).each do |message| %>
+            <div><%= message %></div>
+            <% end %>
+        </div>
+        <div>
+            <%= form.submit %>
+        </div>
+        <% end %>
+
+    </div>
+
+</div>
+<%= render 'componentes/footer' %>
+</div>
+</body>
+
+</html>

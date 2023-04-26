@@ -1,0 +1,29 @@
+<html>
+<head>
+    <%= stylesheet_link_tag 'libros' %>
+</head>
+
+<body>
+<div class="page-container">
+<div class ="content-wrap">
+
+<%= render 'componentes/header' %>
+
+<h1><%= @mensaje.user.nombre %>:</h1>
+<p><%= @mensaje.texto %></p>
+<p>Fecha de creación: <%= @mensaje.created_at.to_formatted_s(:long) %></p>
+<p>Última actualización: <%= @mensaje.updated_at.to_formatted_s(:long) %></p>
+<%=link_to "editar mensaje", :edit_libro_mensaje%>
+<%= link_to "Destroy", :libro_mensaje,
+        data: {
+        turbo_method: :delete,
+        turbo_confirm: "Are you sure?"
+        } %>
+<%=link_to "volver", :libro_mensajes%>
+
+</div>
+<%= render 'componentes/footer' %>
+</div>
+</body>
+
+</html>

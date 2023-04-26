@@ -1,0 +1,27 @@
+<h1>Compras de <%= @user.nombre %></h1>
+<table>
+  <thead>
+    <tr>
+      <th>Libro</th>
+      <th>Estado</th>
+      <th>Acciones</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @compras.each do |compra| %>
+      <tr>
+        <td><%= compra.libro.titulo %></td>
+        <td>
+          <% if compra.estado == "E" %>
+            <p>En Revisión</p>
+          <% elsif compra.estado == "A" %>
+            <p>Aprobado</p>
+          <% elsif compra.estado == "R" %>
+            <p>Rechazado</p>
+        <% end %>
+        </td>
+        <td><%= link_to "Mostrar", user_compra_path(@user, compra) %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

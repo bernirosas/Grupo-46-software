@@ -1,0 +1,47 @@
+<html>
+<head>
+    <%= stylesheet_link_tag 'libros' %>
+</head>
+
+<body>
+<div class="page-container">
+<div class ="content-wrap">
+<%= render 'componentes/header' %>
+
+    <div class="container-libro">
+
+        <%=image_tag "ruby.jpg", class: "foto-libro" %>
+
+        <div class="descripcion">
+            <h1><%= @libro.titulo %></h1>
+            <p><%= @libro.fecha %></p>
+            <p><%= @libro.categoria %></p>
+            <p><%= @libro.precio %></p>
+            <p><%= @libro.autor %></p>
+            <p><%= @libro.stock %></p>
+            <p><%= @libro.descripcion %></p>
+        </div>
+    
+    </div>
+
+    <ul>
+        <li><%= link_to "Edit", :edit_libro%></li>
+        <li><%= link_to "Destroy", :libro,
+        data: {
+        turbo_method: :delete,
+        turbo_confirm: "Are you sure?"
+        } %></li>
+        <li><%= link_to "Lista", :libros %></li>
+        <li><%= link_to "Reseñas", "/libros/#{@libro.id}/resenas/"  %></li>
+        <li><%= link_to "Chat", "/libros/#{@libro.id}/mensajes/"  %></li>
+        <% if user_signed_in? %>
+        <li><%= link_to "Comprar", "/libros/#{@libro.id}/compras/new"  %></li>
+        <% end %>
+    </ul>
+
+</div>
+<%= render 'componentes/footer' %>
+</div>
+</body>
+
+</html>

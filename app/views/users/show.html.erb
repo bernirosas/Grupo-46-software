@@ -1,0 +1,17 @@
+<h1>Mi perfil</h1>
+
+<p>Email: <%= @user.email %></p>
+<p>Nombre: <%= @user.nombre %></p>
+<p>Teléfono: <%= @user.telefono %></p>
+<p>Descripción: <%= @user.descripcion %></p>
+
+<p>Tipo de usuario:   
+  <% if @user.tipo_de_usuario == "C" %>
+    Cliente
+  <% elsif @user.tipo_de_usuario == "A" %>
+    Administrador
+  <% end %></p>
+<p>Foto de perfil: <br /> <%= image_tag current_user.picture.thumb.url, class: 'figure-img img-fluid rounded', style: 'width: 10%; height: 10%;' %></p>
+<!-- Add any other profile information you want to display here -->
+<%= link_to "Compras", user_compras_path(current_user.id) %>
+<%= link_to "Volver", :back %>

@@ -1,0 +1,85 @@
+html {
+    height: 100%;
+    width: 100%;
+}
+
+body {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    background-image: url("libros_fondo.jpg");
+    background-position: center;
+}
+
+.page-container {
+    position: relative;
+    min-height: 100%;
+}
+
+.content-wrap {
+    padding-bottom: 2.5rem;
+}
+
+#inicio {
+    background-color: white;
+    border-radius: 15px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    padding: 20px;
+    font-weight: 300;
+    height: auto;
+    width: 700px;
+    box-shadow: 10px 10px 30px black;
+    text-align: center;
+}
+
+#inicio h1 {
+    font-size: 100px;
+    font-family: "Comic Sans MS";
+}
+
+#imagen {
+    height: 300px;
+    width: auto;
+}
+
+#transicion {
+    height: 50px;
+    width: auto;
+    background-color: blue;
+    color: white;
+    margin-top: 10px;
+}
+
+#chiste {
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 50px;
+    background-color: white;
+    text-align: center;
+    align-items: center;
+    margin-bottom: 100px;
+    border-radius: 15px;
+    padding: 20px;
+    box-shadow: 10px 10px 30px black;
+    height: auto;
+    width: 700px;
+}
+
+#imagen2 {
+    width: 300px;
+    height: 300px;
+    animation: spin 4s linear infinite;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    border-radius: 50%;
+    box-shadow: 10px 10px 30px black;
+}
+
+@keyframes spin {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}

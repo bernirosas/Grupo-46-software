@@ -1,0 +1,9 @@
+<h1>Nueva compra</h1>
+
+<%= form_for([@libro, @compra]) do |form| %>
+  <%= form.hidden_field :libro_id, value: @libro.id %>
+  <p>Libro:<span><%= @libro.titulo %></span></p>
+  <p>Precio:<span><%= @libro.precio %></span></p>
+  <%= form.submit "Confirmar compra" %>
+<% end %>
+

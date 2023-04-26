@@ -1,0 +1,30 @@
+<html>
+<head>
+    <%= stylesheet_link_tag 'libros' %>
+</head>
+
+<body>
+<div class="page-container">
+<div class ="content-wrap">
+
+<%= render 'componentes/header' %>
+
+<h1><%= @resena.titulo %></h1>
+<p><%= @resena.cuerpo %></p>
+<p>Autor de la reseña: <%= @resena.user.nombre %></p>
+<p>Fecha de creación: <%= @resena.created_at.to_formatted_s(:long) %></p>
+<p>Última actualización: <%= @resena.updated_at.to_formatted_s(:long) %></p>
+<%=link_to "editar resena", :edit_libro_resena%>
+<%= link_to "Destroy", :libro_resena,
+        data: {
+        turbo_method: :delete,
+        turbo_confirm: "Are you sure?"
+        } %>
+<%=link_to "volver", :libro_resenas%>
+
+</div>
+<%= render 'componentes/footer' %>
+</div>
+</body>
+
+</html>

@@ -1,0 +1,16 @@
+<h1>Compra #<%= @compra.id %></h1>
+
+<p><strong>Estado:</strong> <%= @compra.estado %></p>
+<p><strong>Libro:</strong> <%= @compra.libro.titulo %></p>
+<p><strong>Usuario:</strong> <%= @compra.user.nombre %></p>
+<p><strong>Fecha de compra:</strong> <%= @compra.created_at.strftime("%d/%m/%Y") %></p>
+
+<%= link_to "Editar", edit_user_compra_path(@user, @compra) %>
+<!--
+<%= link_to "Eliminar", user_compra_path(@user, @compra), method: :delete, data: { confirm: "¿Estás seguro de que quieres eliminar esta compra?" } %>
+-->
+<%= link_to "Destroy", :user_compra,
+        data: {
+        turbo_method: :delete,
+        turbo_confirm: "Are you sure?"
+        } %>

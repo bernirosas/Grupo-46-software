@@ -1,0 +1,26 @@
+<html>
+<head>
+    <%= stylesheet_link_tag 'libros' %>
+</head>
+
+<body>
+<div class="page-container">
+<div class ="content-wrap">
+
+<%= render 'componentes/header' %>
+
+<h1>Editar un mensaje para <%= @libro.titulo %></h1>
+<%= form_for([@libro, @mensaje]) do |form| %>
+  <div class="form-group">
+    <%= form.label :texto %>
+    <%= form.text_field :texto, class: 'form-control' %>
+  </div>
+  <%= form.submit 'Enviar', class: 'btn btn-primary' %>
+<% end %>
+
+</div>
+<%= render 'componentes/footer' %>
+</div>
+</body>
+
+</html>

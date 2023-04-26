@@ -1,0 +1,74 @@
+<html>
+<head>
+    <%= stylesheet_link_tag 'devise' %>
+</head>
+
+<body>
+<div class="page-container">
+<div class ="content-wrap">
+<%= render 'componentes/header' %>
+
+<h2>Sign up</h2>
+
+<%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: {multipart: true}) do |f| %>
+  <%= render "devise/shared/error_messages", resource: resource %>
+
+  <div class="field">
+    <%= f.label :email %><br />
+    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+  </div>
+
+  <div class="field">
+    <%= f.label :password %>
+    <% if @minimum_password_length %>
+    <em>(<%= @minimum_password_length %> characters minimum)</em>
+    <% end %><br />
+    <%= f.password_field :password, autocomplete: "new-password" %>
+  </div>
+
+  <div class="field">
+    <%= f.label :password_confirmation %><br />
+    <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
+  </div>
+
+  <div class="field">
+    <%= f.label :nombre %> <br />
+    <%= f.text_field :nombre%>
+  </div>
+
+    <div class="field">
+    <%= f.label :telefono %> <br />
+     <%= f.text_field :telefono, pattern: "[0-9]*", title: "Este campo solo permite caracteres numéricos"%>
+  </div>
+
+  <div class="field">
+  <%= f.label :descripcion %><br />
+  <%= f.text_area :descripcion, rows: 5, class: 'form-control' , value: 'Acerca de mi...'%>
+  </div>
+   <br />
+<div class="field">
+  <%= f.label :tipo_de_usuario %><br />
+  <%= f.select :tipo_de_usuario, options_for_select([['Administrador', 'A'], ['Cliente', 'C']], selected: 'C'), include_blank: false %>
+<br />
+  <div class="field">
+    <%= f.label :picture %> <br />
+    <%= f.file_field :picture%>
+  </div>
+  <br />
+<%= image_tag @user.picture.thumb.url, class: 'figure-img img-fluid rounded', style: 'width: 10%; height: 10%;' %>
+</div>
+  <br />
+  <div class="actions">
+    <%= f.submit "Sign up" %>
+  </div>
+<% end %>
+
+<%= render "devise/shared/links" %>
+
+
+</div>
+<%= render 'componentes/footer' %>
+</div>
+</body>
+
+</html>

@@ -1,0 +1,26 @@
+<html>
+<head>
+    <%= stylesheet_link_tag 'libros' %>
+</head>
+
+<body>
+<div class="page-container">
+<div class ="content-wrap">
+
+<%= render 'componentes/header' %>
+
+<h1>Editar una compra de <%= @compra.user.nombre %></h1>
+<%= form_for([@user, @compra]) do |form| %>
+  <div class="field">
+    <%= form.label :estado %><br />
+    <%= form.select :estado, options_for_select([['En revisión', 'E'], ['Aceptado', 'A'], ['Rechazado', 'R']], selected: @compra.estado), include_blank: false %>
+  </div>
+  <%= form.submit 'Enviar', class: 'btn btn-primary' %>
+<% end %>
+
+</div>
+<%= render 'componentes/footer' %>
+</div>
+</body>
+
+</html>

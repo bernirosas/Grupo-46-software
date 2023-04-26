@@ -1,0 +1,34 @@
+<html>
+<head>
+    <title>Hello world</title>
+    <%= stylesheet_link_tag 'home' %>
+
+</head>
+
+<script>
+function myFunction() {
+  location.href = "./";
+}
+</script>
+
+<div class="page-container">
+<div class ="content-wrap">
+<%= render 'componentes/header' %>
+
+<body>
+    <div id="chiste">
+    <h1> Toque final </h1>
+
+    <%= image_tag "promo.png", id: "imagen2" %>
+
+    <br>
+
+    <button id="transicion" onclick="myFunction()">Retorno</button>
+    </div>
+
+</div>
+<%= render 'componentes/footer' %>
+</div>
+</body>
+
+</html>

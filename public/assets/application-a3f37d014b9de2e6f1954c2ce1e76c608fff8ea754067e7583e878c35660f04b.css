@@ -1,0 +1,57 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS (and SCSS, if configured) file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+
+
+ */
+
+body {
+    background-color: rgb(174, 119, 247);
+}
+
+#inicio {
+    margin-top: 50px;
+    background-color: white;
+    border-radius: 15px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    padding: 20px;
+    font-weight: 300;
+    height: auto;
+    width: 700px;
+    box-shadow: 10px 10px 30px black;
+    text-align: center;
+}
+
+#inicio h1 {
+    font-size: 100px;
+    font-family: "Comic Sans MS";
+}
+
+#inicio :hover {
+    background-color: rgb(158, 216, 251);
+    transform: rotate(180deg);
+}
+
+footer {
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: rgb(249, 226, 53);
+    text-align: left;
+    margin-top: 50px;
+    position: fixed;
+    border-collapse: collapse;
+    font-family: "Comic Sans MS";
+}

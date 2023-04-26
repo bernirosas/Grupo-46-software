@@ -1,0 +1,32 @@
+<html>
+<head>
+    <%= stylesheet_link_tag 'libros' %>
+</head>
+
+<body>
+<div class="page-container">
+<div class ="content-wrap">
+<%= render 'componentes/header' %>
+
+    <h1 class="titulo">Estos son los libros</h1>
+
+    <%= link_to "nuevo libro", :new_libro %>
+
+    <div class="grid-container">
+        <div class="grid">
+            <% @libros.each do |libro| %>
+            <div class="ficha">
+                <%= link_to libro.titulo, libro, class: "titulo_libro" %><br>
+                <%= link_to libro.precio, class: "precio" %>
+            </div>
+            <% end %>
+        </div>
+    </div>
+
+
+</div>
+<%= render 'componentes/footer' %>
+</div>
+</body>
+
+</html>

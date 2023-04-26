@@ -1,0 +1,39 @@
+<%= stylesheet_link_tag 'componentes' %>
+
+<header>
+<div class="container">
+    <div class="item1">
+        <%= link_to "Inicio", root_path, id: "index_path" %>
+        <%= link_to "Conocenos", inicio_path, id: "inicio_path" %>
+    </div>
+    <div class="item2">
+    <!--
+        <%= link_to "Iniciar Sesión", :libros, id: "iniciar" %>
+        <%= link_to "Crear Usuario", :libros, id: "crear" %>
+    -->
+        <% if user_signed_in? %>
+        <p>Logged in as <%= current_user.nombre %></p>
+        <%= link_to "Ver mi perfil", profile_path %>
+        <br />
+        <%= link_to "Editar mi perfil", edit_user_registration_path %>
+        <%= button_to "Sign out", destroy_user_session_path, method: :delete %>
+        <% else %>
+        <%= link_to "Iniciar Usuario", new_user_session_path %>
+        <%= link_to "Registrarse", new_user_registration_path %>
+        <% end %>
+        <% if user_signed_in? %>
+        <%= image_tag current_user.picture.thumb.url, class: 'figure-img img-fluid rounded', style: 'width: 10%; height: 10%;' %>
+        <% end %>
+        <% if flash[:notice] %>
+        <p class="notice"><%= flash[:notice] %></p>
+        <% end %>
+
+        <% if flash[:alert] %>
+        <p class="alert"><%= flash[:alert] %></p>
+        <% end %>
+
+        <%= yield %>
+
+    </div>
+</div>
+</header>
